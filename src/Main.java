@@ -1,17 +1,44 @@
 import Enums.EstadoVeiculo;
+import Enums.TipoPagamento;
+import Enums.TipoStatus;
 import Enums.TipoVeiculo;
-import Models.Fabricante;
-import Models.Veiculo;
+import Models.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Fabricante ford = new Fabricante(1,"Ford Motor Company");
-        Veiculo veiculo = new Veiculo(1,"Picape",ford, TipoVeiculo.CARRO,2024, EstadoVeiculo.NOVO, 209.990);
+        Cliente cliente1 = new Cliente(1, "João", "111.999.777-00", "1199999-8888", "joão@gmail.com", "Interlagos");
+        Cliente cliente2 = new Cliente(2, "Maria", "222.666.444-01", "1177788-0000", "maria@gmail.com", "Jardim ipanema");
 
-        System.out.println(veiculo);
+        Fabricante ford = new Fabricante(1,"Ford Motor Company");
+        Fabricante honda = new Fabricante(2, "honda");
+
+        Funcionario funcionario1 = new Funcionario(1, "Carlos", "Vendedor", "11/09/2020");
+        Funcionario funcionario2 = new Funcionario(2, "Miguel", "Gerente", "11/09/2010");
+
+        Veiculo veiculo1 = new Veiculo(1,"F-150 Picape",ford, TipoVeiculo.CARRO,2024, EstadoVeiculo.NOVO, 209.990);
+        Veiculo veiculo2 = new Veiculo(2,"Honda City Sedan",honda, TipoVeiculo.CARRO,2023, EstadoVeiculo.SEMI_NOVO, 97.000);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataPagamento1 = LocalDate.parse("16/02/2025", formatter);
+        LocalDate dataPagamento2 = LocalDate.parse("09/01/2022", formatter);
+
+        Pagamento pagamento1 = new Pagamento(1, dataPagamento1, TipoPagamento.FINANCIAMENTO, TipoStatus.APROVADO);
+        Pagamento pagamento2 = new Pagamento(2, dataPagamento2, TipoPagamento.PIX, TipoStatus.APROVADO);
+
+        ItemVenda itemVenda1 = new ItemVenda(1, veiculo1, 1, 209.990, 0.10);
+        ItemVenda itemVenda2 = new ItemVenda(2, veiculo2, 1, 97.000, 0.05);
+
+        Venda venda1 = new Venda(1, cliente1, funcionario1, dataPagamento1, pagamento1, itemVenda1);
+        Venda venda2 = new Venda(2, cliente2, funcionario2, dataPagamento2, pagamento2, itemVenda2);
+
+        System.out.println("----- Vendas -----");
+        System.out.println(venda1);
+        System.out.println(venda2);
     }
 }

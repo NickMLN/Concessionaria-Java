@@ -62,13 +62,17 @@ public class Venda {
         this.itensVenda = itensVenda;
     }
 
-     @Override
+    @Override
     public String toString() {
-        return "Venda{" + "id=" + id + 
-        ", cliente=" + cliente + 
-        ", vendedor=" + vendedor + 
-        ", data=" + data + 
-        ", pagamento=" + pagamento + 
-        ", itensVenda=" + itensVenda + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Venda {\n")
+                .append("  id=").append(id).append(",\n")
+                .append("  cliente=").append(cliente).append(",\n")
+                .append("  vendedor=").append(vendedor).append(",\n")
+                .append("  data=").append(data).append(",\n")
+                .append("  pagamento=").append(pagamento).append(",\n")
+                .append("  itensVenda=").append(itensVenda).append("\n")
+                .append("}");
+        return sb.toString();
     }
 }

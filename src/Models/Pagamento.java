@@ -46,9 +46,14 @@ public class Pagamento {
 
     @Override
     public String toString() {
-        return "Pagamento{" + "id=" + id + 
-        ", data=" + data + 
-        ", tipo=" + tipo + 
-        ", status=" + status +'}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pagamento {\n")
+                .append("  id=").append(id).append(",\n")
+                .append("  data=").append(data).append(",\n")
+                .append("  tipo=").append(tipo).append(",\n")
+                .append("  status=").append(status).append("\n")
+                .append("}");
+        return sb.toString();
     }
+
 }
