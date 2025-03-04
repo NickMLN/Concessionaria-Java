@@ -31,8 +31,6 @@ public class Veiculo {
         this.preco = preco;
     }
 
-
-
     public int getId() {
         return id;
     }
