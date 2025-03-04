@@ -1,4 +1,4 @@
-package POO;
+package Models;
 
 import java.time.LocalDate;
 
