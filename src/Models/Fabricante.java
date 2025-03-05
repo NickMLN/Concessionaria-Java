@@ -27,9 +27,8 @@ public class Fabricante {
 
     @Override
     public String toString() {
-        return "Fabricante{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append(nome);
+        return sb.toString();
     }
 }

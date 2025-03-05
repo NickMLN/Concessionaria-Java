@@ -89,14 +89,13 @@ public class Veiculo {
 
     @Override
     public String toString() {
-        return "Veiculo {" +
-                "id=" + id +
-                ", modelo='" + modelo + '\'' +
-                ", fabricante=" + fabricante +
-                ", tipo=" + tipo +
-                ", anoFabricacao=" + anoFabricacao +
-                ", estado=" + estado +
-                ", preco=" + preco +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Modelo: ").append(modelo).append("\n")
+                .append("Fabricante: ").append(fabricante).append("\n")
+                .append("Tipo do Veiculo: ").append(tipo).append("\n")
+                .append("Ano do Veiculo: ").append(anoFabricacao).append("\n")
+                .append("Estado do Veiculo: ").append(estado).append("\n")
+                .append("Preço sem Desconto: R$ ").append(String.format("%.3f",preco));
+        return sb.toString();
     }
 }

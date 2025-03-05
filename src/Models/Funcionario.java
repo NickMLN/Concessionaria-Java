@@ -1,12 +1,17 @@
 package Models;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Funcionario {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     private int id;
     private String nome;
     private String cargo;
-    private String dataContratacao;
+    private LocalDate dataContratacao;
 
-    public Funcionario(int id, String nome, String cargo, String dataContratacao) {
+    public Funcionario(int id, String nome, String cargo, LocalDate dataContratacao) {
         this.id = id;
         this.nome = nome;
         this.cargo = cargo;
@@ -37,21 +42,21 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
-    public String getDataContratacao() {
+    public LocalDate getDataContratacao() {
         return dataContratacao;
     }
 
-    public void setDataContratacao(String dataContratacao) {
+    public void setDataContratacao(LocalDate dataContratacao) {
         this.dataContratacao = dataContratacao;
     }
 
     @Override
     public String toString() {
-        return "Funcionario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", cargo='" + cargo + '\'' +
-                ", dataContratacao='" + dataContratacao + '\'' +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("id: ").append(id).append("\n")
+                .append("Nome : ").append(nome).append("\n")
+                .append("Cargo: ").append(cargo).append("\n")
+                .append("Data da Contratação: ").append(dataContratacao.format(formatter));
+        return sb.toString();
     }
 }

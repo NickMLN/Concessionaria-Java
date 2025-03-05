@@ -4,6 +4,7 @@ import Enums.TipoPagamento;
 import Enums.TipoStatus;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Pagamento {
 
@@ -11,6 +12,7 @@ public class Pagamento {
     private LocalDate data;
     private TipoPagamento tipo;
     private TipoStatus status;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Pagamento(int id, LocalDate data, TipoPagamento tipo, TipoStatus status) {
         this.id = id;
@@ -47,12 +49,10 @@ public class Pagamento {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Pagamento {\n")
-                .append("  id=").append(id).append(",\n")
-                .append("  data=").append(data).append(",\n")
-                .append("  tipo=").append(tipo).append(",\n")
-                .append("  status=").append(status).append("\n")
-                .append("}");
+        sb.append("id: ").append(id).append("\n")
+                .append("Data do Pagamento: ").append(data.format(formatter)).append("\n")
+                .append("Tipo de Pagamento: ").append(tipo.toString()).append("\n")
+                .append("Status do Pagamento: ").append(status.toString());
         return sb.toString();
     }
 

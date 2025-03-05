@@ -58,17 +58,17 @@ public class ItemVenda {
     }
 
     public double getTotal() {
-        return this.preco * this.desconto *this.quantidade;
+        return this.preco -= (preco * this.desconto) * this.quantidade;
     }
 
     @Override
     public String toString() {
-        return "ItemVenda{" +
-                "id=" + id +
-                ", veiculo=" + veiculo +
-                ", quantidade=" + quantidade +
-                ", preco=" + preco +
-                ", desconto=" + desconto + "total=" + getTotal() +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("id: ").append(id).append("\n")
+                .append(veiculo).append("\n")
+                .append("Quantidade: ").append(quantidade).append("\n")
+                .append("Desconto: ").append(desconto * 100).append("%\n")
+                .append("Valor da Venda Total: R$ ").append(String.format("%.3f", getTotal()));
+        return sb.toString();
     }
 }

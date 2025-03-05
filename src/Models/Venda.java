@@ -65,14 +65,18 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Venda {\n")
-                .append("  id=").append(id).append(",\n")
-                .append("  cliente=").append(cliente).append(",\n")
-                .append("  vendedor=").append(vendedor).append(",\n")
-                .append("  data=").append(data).append(",\n")
-                .append("  pagamento=").append(pagamento).append(",\n")
-                .append("  itensVenda=").append(itensVenda).append("\n")
-                .append("}");
+        sb.append("id da venda: ").append(id).append("\n")
+                .append("DADOS DO CLIENTE: \n").append(cliente).append("\n")
+                .append("\n")
+                .append("DADOS DO VENDEDOR: \n").append(vendedor).append("\n")
+                .append("\n")
+                .append("DATA DA VENDA: \n").append(data).append("\n")
+                .append("\n")
+                .append("DADOS DO PAGEMENTO: \n").append(pagamento).append("\n")
+                .append("\n")
+                .append("ITENS DA VENDA: \n").append(itensVenda).append("\n")
+                .append("\n")
+                .append("--------------------------------------------------");
         return sb.toString();
     }
 }

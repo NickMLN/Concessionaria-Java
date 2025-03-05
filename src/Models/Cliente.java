@@ -67,13 +67,13 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", email='" + email + '\'' +
-                ", endereco='" + endereco + '\'' +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("id: ").append(id).append("\n")
+                .append("Nome: ").append(nome).append("\n")
+                .append("CPF: ").append(cpf).append("\n")
+                .append("Telefone: ").append(telefone).append("\n")
+                .append("Email: ").append(email).append("\n")
+                .append("Endereço: ").append(endereco);
+        return sb.toString();
     }
 }
