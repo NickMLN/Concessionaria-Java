@@ -44,7 +44,10 @@ Venda{id=2, cliente=Maria, ...}
 - Persistência de dados usando banco de dados.
 - Opção de relatórios detalhados das vendas.
 
-## Autor
-- Nicolas Moreira Lima do Nascimento
+## Autores
+- Paula Zillig
+- Nicolas Lima
+- Edvan Ribeiro Dos Santos Junior
+- Lucas Guedes
   
 
