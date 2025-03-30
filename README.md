@@ -1,4 +1,4 @@
-# Projeto de Venda de Veículos
+# Projeto Concessionária
 
 ## Descrição
 Este projeto simula um sistema de vendas de veículos, onde é possível cadastrar clientes, funcionários, fabricantes, veículos, pagamentos e vendas. Ele utiliza classes e enums para organizar os dados e exibir informações sobre as vendas realizadas.
